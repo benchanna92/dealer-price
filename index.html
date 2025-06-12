@@ -368,25 +368,15 @@
             return;
         }
 
-        const telegramUsername = 'GSM_Z'; // Telegram username without @ and spaces replaced by underscore
+        const telegramLink = 'https://t.me/+aJp4vttzBAlkZTdl';
         const message =
             `Service Request from ZUUCASTER GSM\n` +
             `Service: ${service}\n` +
             `IC/IMEI Number: ${imei}`;
 
-        const encodedMessage = encodeURIComponent(message);
+        alert('A Telegram chat window will open. Please copy and send the following message:\n\n' + message);
 
-        // Telegram deep link for messaging user by username:
-        // Format: https://t.me/username
-        // Telegram doesn't support prefilled messages via URL natively,
-        // but you can use a bot or tell user to message.
-        // We open chat with the username only:
-        const telegramURL = `https://t.me/${telegramUsername}`;
-
-        // Open Telegram chat
-        window.open(telegramURL, '_blank');
-
-        alert('Please send the following message in Telegram chat:\n\n' + message);
+        window.open(telegramLink, '_blank');
     });
 
     // Allow Enter key to submit code
@@ -398,3 +388,4 @@
 </script>
 </body>
 </html>
+
